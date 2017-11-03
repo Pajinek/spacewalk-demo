@@ -6,13 +6,14 @@ Demo for workshop about Spacewalk
 
 http://demo.spacewalk.cloud/pub/???
 
+
 2. Register system
 
 ```
-    # wget http://demo.spacewalk.cloud/pub/RHN-ORG-TRUSTED-SSL-CERT -O /usr/share/rhn/cert-demo.spacewalk.cloud
-    # rhnreg_ks --serverUrl=https://demo.spacewalk.cloud/XMLRPC --sslCACert=/usr/share/rhn/cert-demo.spacewalk.cloud --username USERNAME --password PASSWORD
+    # yum install https://demo.spacewalk.cloud/pub/rhn-org-trusted-ssl-cert-1.0-3.noarch.rpm
+    # rhnreg_ks --serverUrl=https://demo.spacewalk.cloud/XMLRPC --username USERNAME --password PASSWORD
 ```
-RHEL/CentOS
+
 
 3. Client tools
 
@@ -20,14 +21,55 @@ RHEL/CentOS
     - `# rhn-channel --add -c spacewalk27-client-fedora26-x86_64`
     - Systems > Software > Software Channels > Change Subscriptions
 
+
 4. Configuration management
 
 ```
     # yum install rhncfg-management rhncfg-client rhncfg-actions
+    # rhncfg-manager create-channel configchannel
+    # rhncfg-manager add -c configchannel -d /root/.bashrc bashrc
 ```
+    - Systems > Configuration > Manage Configuration Channels > Subscribe to Channels > Continue
+    - Systems > Configuration > Deploy Files > Deploy
+
 
 5. Kickstarts
 
+
 6. Channels
+
+ * You may need to install some packages
+
+```
+    # yum install rpm-build wget unzip python-setuptools rhnpush
+```
+
+ * Create your channel on Spacewalk
+
+    - Channels > Manage Software Channels > Create Channel
+    - `# spacecmd -- softwarechannel_create -n NAME -l LABEL -p fedora26-x86_64 -a x86_64 -c sha1`
+    - `# spacecmd -- softwarechannel_create -n NAME -l LABEL -p centos7-x86_64 -a x86_64 -c sha1`
+    - API http://demo.spacewalk.cloud.pub/create-channel.py
+
+ * Enable created channel for the client
+
+ * Dowload source files
+
+    # wget http://demo.spacewalk.cloud/pub/packages.zip
+
+ * Build rpm
+
+    # python setup.py bdist --format=rpm
+
+ * Push created rpm into Spacewalk channel
+
+    # rhnpush -c LABEL --nosig --server demo.spacewalk.cloud dist/spacewalk-demo-0.1-1.noarch.rpm
+
+ * Install rpm on you client
+
+```
+    # yum install spacewalk-demo
+    # sw-demo.py
+```
 
 7. ?
