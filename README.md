@@ -55,15 +55,21 @@ http://demo.spacewalk.cloud/pub/???
 
  * Dowload source files
 
+```
     # wget http://demo.spacewalk.cloud/pub/packages.zip
+```
 
  * Build rpm
 
+```
     # python setup.py bdist --format=rpm
+```
 
  * Push created rpm into Spacewalk channel
 
+```
     # rhnpush -c LABEL --nosig --server demo.spacewalk.cloud dist/spacewalk-demo-0.1-1.noarch.rpm
+```
 
  * Install rpm on you client
 
