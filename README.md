@@ -4,14 +4,26 @@ Demo for workshop about Spacewalk
 
 1. Create organization
 
-http://demo.spacewalk.cloud/pub/???
+Go to following site and crate new account:
+
+http://www.spacewalk.cloud/
 
 
 2. Register system
 
+Create client system by docker
+
 ```
-    # yum install https://demo.spacewalk.cloud/pub/rhn-org-trusted-ssl-cert-1.0-3.noarch.rpm
+docker run -it spacewalk/demo-client
+```
+
+or you can use own system for it.
+
+```
+    # yum install -y http://demo.spacewalk.cloud/pub/rhn-org-trusted-ssl-cert-1.0-3.noarch.rpm
     # rhnreg_ks --serverUrl=https://demo.spacewalk.cloud/XMLRPC --username USERNAME --password PASSWORD
+    # wget http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2015
+    # rpm --import RPM-GPG-KEY-spacewalk-2015
 ```
 
 

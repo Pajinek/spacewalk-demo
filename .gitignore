@@ -1,0 +1,7 @@
+*.py[c|o]
+env/*
+eshop/storage
+eshop/static
+.idea/*
+data.db
+*.sql

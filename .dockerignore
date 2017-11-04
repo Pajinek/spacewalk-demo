@@ -1,0 +1,15 @@
+# settings
+.git
+.idea
+.dockerignore
+*.retry
+Dockerfile
+env/*
+
+# static files
+eshop/storage
+eshop/static/
+
+# databases
+*.db
+*.sql
