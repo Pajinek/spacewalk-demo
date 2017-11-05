@@ -24,6 +24,9 @@ or you can use own system for it.
     # rhnreg_ks --serverUrl=https://demo.spacewalk.cloud/XMLRPC --username USERNAME --password PASSWORD
     # wget http://yum.spacewalkproject.org/RPM-GPG-KEY-spacewalk-2015
     # rpm --import RPM-GPG-KEY-spacewalk-2015
+    # wget https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+    # rpm --import RPM-GPG-KEY-EPEL-7
+
 ```
 
 
