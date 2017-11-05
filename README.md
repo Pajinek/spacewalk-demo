@@ -56,6 +56,9 @@ or you can use own system for it.
 
 5. Kickstarts
 
+    - Systems > Kickstart > Distribution
+    - Systems > Kickstart > Profile
+
 
 6. Channels
 
