@@ -41,7 +41,12 @@ or you can use own system for it.
  - Upgrade
     - `# yum upgrade -y`
 
-
+ - Enable rhncfg (configure channel, remote command) 
+    
+```
+    # rhn-actions-control --enable all
+```
+ 
 4. Configuration management
 
 ```
