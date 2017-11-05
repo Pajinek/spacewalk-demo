@@ -57,6 +57,7 @@ or you can use own system for it.
 5. Kickstarts
 
     - Systems > Kickstart > Distribution
+        Kickstrart tree - /var/satellite/custom/centos-7-x86_64/
     - Systems > Kickstart > Profile
 
 
