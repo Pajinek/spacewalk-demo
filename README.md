@@ -33,12 +33,16 @@ or you can use own system for it.
     - `# rhn-channel --add -c spacewalk27-client-fedora26-x86_64`
     - Systems > Software > Software Channels > Change Subscriptions
 
+ - Upgrade
+    - `# yum upgrade -y`
+
 
 4. Configuration management
 
 ```
     # yum install rhncfg-management rhncfg-client rhncfg-actions
     # rhncfg-manager create-channel configchannel
+    # wget https://github.com/Pajinek/spacewalk-demo/raw/master/bashrc
     # rhncfg-manager add -c configchannel -d /root/.bashrc bashrc
 ```
     - Systems > Configuration > Manage Configuration Channels > Subscribe to Channels > Continue
@@ -61,7 +65,7 @@ or you can use own system for it.
     - Channels > Manage Software Channels > Create Channel
     - `# spacecmd -- softwarechannel_create -n NAME -l LABEL -p fedora26-x86_64 -a x86_64 -c sha1`
     - `# spacecmd -- softwarechannel_create -n NAME -l LABEL -p centos7-x86_64 -a x86_64 -c sha1`
-    - API http://demo.spacewalk.cloud.pub/create-channel.py
+    - API http://demo.spacewalk.cloud/pub/create-channel.py
 
  * Enable created channel for the client
 
