@@ -14,7 +14,9 @@ http://www.spacewalk.cloud/
 Create client system by docker
 
 ```
-docker run -it spacewalk/demo-client
+   # docker run -it spacewalk/demo-client
+   # yum install -y http://demo.spacewalk.cloud/pub/rhn-org-trusted-ssl-cert-1.0-3.noarch.rpm
+   # rhnreg_ks --serverUrl=https://demo.spacewalk.cloud/XMLRPC --username USERNAME --password PASSWORD
 ```
 
 or you can use own system for it.

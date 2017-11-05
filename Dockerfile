@@ -6,3 +6,5 @@ RUN yum install -y rhn-setup wget \
  && wget https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7 \
  && rpm --import RPM-GPG-KEY-EPEL-7 \
  && yum update -y && yum clean all
+
+CMD "/usr/bin/bash"
