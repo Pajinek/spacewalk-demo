@@ -41,6 +41,13 @@ or you can use own system for it.
  - Upgrade
     - `# yum upgrade -y`
 
+ - Install and run service osad for pick up task in real time
+
+```
+    # yum install osad -y
+    # osad
+```
+
  - Enable rhncfg (configure channel, remote command) 
     
 ```
