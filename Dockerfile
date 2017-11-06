@@ -7,4 +7,4 @@ RUN yum install -y rhn-setup wget \
  && rpm --import RPM-GPG-KEY-EPEL-7 \
  && yum update -y && yum clean all
 
-CMD "/usr/bin/bash"
+ENTRYPOINT "/usr/bin/bash"
